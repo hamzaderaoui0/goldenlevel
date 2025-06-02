@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Market Mode Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #00ffcc;
+        }
+
+        form {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2c2c2c;
+            color: #fff;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background-color: #00ffcc;
+            border: none;
+            border-radius: 6px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00e6b3;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #00ffcc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Market Mode Calculator</h1>
+    <form method="POST">
+        <label>INDEX X:
+            <input type="text" name="Index X" required>
+        </label>
+        <label>INDEX Y:
+            <input type="text" name="Index Y" required>
+        </label>
+        <label>Mode:
+            <select name="mode" required>
+                <option value="Bullish Order Flow">Bullish</option>
+                <option value="Bearish Order Flow">Bearish</option>
+            </select>
+        </label>
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if v is not none %}
+        <h2>Result: {{ v }}</h2>
+    {% endif %}
+</body>
+</html>
